@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS payables (
+    id TEXT PRIMARY KEY,
+    vendor_id TEXT NOT NULL REFERENCES vendors(id),
+    amount NUMERIC(18,2) NOT NULL,
+    paid NUMERIC(18,2) DEFAULT 0,
+    due_date DATE NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
