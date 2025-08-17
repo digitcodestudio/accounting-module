@@ -31,3 +31,11 @@ func (s *PayableService) Pay(id string, amount float64) error {
     p.Paid += amount
     return s.Repo.Update(p)
 }
+
+func (s *PayableService) List() ([]*models.Payable, error) {
+    return s.Repo.List()
+}
+
+func (s *ReceivableService) List() ([]*models.Receivable, error) {
+    return s.Repo.List()
+}
